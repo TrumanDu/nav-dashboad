@@ -42,6 +42,22 @@
 </nav>
 
 <div class="container-fluid">
+    {% for index in indexs %}
+    <div id="{{ index.id }}" class="card">
+        <div class="card-header" style="background: rgb(239, 246, 249);padding: .25rem 0.75rem;display: flex">
+            <h4 class="card-title">
+                {{ index.name }}
+            </h4>
+            <button type="button" class="close pull-right" aria-label="Close" onclick="del('{{ index.id }}')" style="display: none;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="card-body">
+
+            面板内容
+        </div>
+    </div>
+    {% endfor %}
 
 </div>
 
@@ -96,8 +112,10 @@
                 onSwitchChange: function (e, state) {
                     if (state) {
                         $("#add").show();
+                        $(".close").show();
                     } else {
                         $("#add").hide();
+                        $(".close").hide();
                     }
                 }
             }
@@ -111,10 +129,28 @@
             data: {name: $("#name").val()},
             datatype: 'json',
             success: function (data, textStatus, jqXHR) {
-                console.log(data)
+                console.log(data);
+                window.location.href = "/";
                 $("#name").val();
-                $(".container-fluid").html(data);
                 $('#addModal').modal('hide');
+            },
+            error: function (xhr, textStatus) {
+                console.log('错误')
+                console.log(xhr)
+                console.log(textStatus)
+            },
+        });
+    }
+
+    function del(id) {
+        $.ajax({
+            url: '/index/delete?id=' + id,
+            type: 'get',
+            data: {name: $("#name").val()},
+            datatype: 'json',
+            success: function (data, textStatus, jqXHR) {
+                console.log(data);
+                window.location.href = "/";
             },
             error: function (xhr, textStatus) {
                 console.log('错误')

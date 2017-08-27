@@ -1,8 +1,13 @@
 const Base = require('./base.js');
 
 module.exports = class extends Base {
-    indexAction() {
-        return this.display("將 DIV 背景顏色設計為 #000");
+    async indexAction() {
+        let model = this.model('index');
+        let data = await model.select();
+        //data returns [{name: 'thinkjs', email: 'admin@thinkjs.org'}, ...]
+        //return this.json(data);
+        this.assign('indexs', data); //给模板赋值
+        return this.display();
     }
 
     /**
