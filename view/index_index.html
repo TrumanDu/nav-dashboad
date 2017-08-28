@@ -45,12 +45,12 @@
     {% for index in indexs %}
     <div id="{{ index.id }}" class="card">
         <div class="card-header" style="background: rgb(239, 246, 249);padding: .25rem 0.75rem;display: flex">
+            <a href="#"  class="close" style="display: none;float:right;" aria-label="Close" onclick="del('{{ index.id }}')"> <span aria-hidden="true">&times;</span></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <h4 class="card-title">
                 {{ index.name }}
             </h4>
-            <button type="button" class="close pull-right" aria-label="Close" onclick="del('{{ index.id }}')" style="display: none;">
-                <span aria-hidden="true">&times;</span>
-            </button>
+
         </div>
         <div class="card-body">
 
