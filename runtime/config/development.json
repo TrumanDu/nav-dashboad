@@ -16,7 +16,7 @@
     "type": "file",
     "file": {
       "timeout": 86400000,
-      "cachePath": "E:\\git\\GitHub\\nav-dashboad\\runtime\\cache",
+      "cachePath": "E:\\github\\nav-dashboad\\runtime\\cache",
       "pathDepth": 1,
       "gcInterval": 86400000
     }
@@ -24,7 +24,7 @@
   "model": {
     "type": "sqlite",
     "sqlite": {
-      "path": "E:\\git\\GitHub\\nav-dashboad\\runtime\\sqlite",
+      "path": "E:\\github\\nav-dashboad\\runtime\\sqlite",
       "database": "data",
       "connectionLimit": 1,
       "prefix": ""
@@ -36,13 +36,13 @@
       "cookie": {
         "name": "thinkjs"
       },
-      "sessionPath": "E:\\git\\GitHub\\nav-dashboad\\runtime\\session"
+      "sessionPath": "E:\\github\\nav-dashboad\\runtime\\session"
     }
   },
   "view": {
     "type": "nunjucks",
     "nunjucks": {
-      "viewPath": "E:\\git\\GitHub\\nav-dashboad\\view",
+      "viewPath": "E:\\github\\nav-dashboad\\view",
       "sep": "_",
       "extname": ".html"
     }

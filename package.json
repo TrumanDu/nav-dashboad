@@ -9,13 +9,15 @@
     "lint-fix": "eslint --fix src/"
   },
   "dependencies": {
+    "emailjs": "1.0.8",
+    "nodemailer": "^4.1.0",
     "think-cache-file": "~1.0.8",
     "think-model": "^1.0.0",
+    "think-model-abstract": "^1.0.7",
+    "think-model-sqlite": "^1.0.3",
     "think-session-file": "^1.0.5",
     "think-view": "^1.0.0",
     "think-view-nunjucks": "^1.0.1",
-    "think-model-sqlite": "^1.0.3",
-    "think-model-abstract": "^1.0.7",
     "thinkjs": "^3.0.0"
   },
   "devDependencies": {
